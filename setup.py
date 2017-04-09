@@ -16,7 +16,7 @@ setup(
     description = 'Vernam cipher',
     long_description = long_description,
 
-    url = 'https://github.com/roysoup/vernam',
+    url = 'https://github.com/roysoup/Vernam',
 
     author = 'Roy Siu',
     author_email = '',
