@@ -11,7 +11,7 @@ with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' ), encod
 
 setup(
     name = 'vernam',
-    version = '1.0.0',
+    version = '1.0.2',
 
     description = 'Vernam cipher',
     long_description = long_description,
