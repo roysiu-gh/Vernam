@@ -44,9 +44,10 @@ Import:
 ### API Reference
 1. Create an instance of class vernam
 2. Run: 
-instance.xor(key) [^1]
+instance.xor(key)
+  * "key" must be a string or list, if the latter, each item must contain a single unicode character in string form
 ---
 ### License
-[MIT](https://choosealicense.com/licenses/mit/#)
+[MIT Licence](https://choosealicense.com/licenses/mit/#)
+
 ---
-[^1]: key must be a string or list, if the latter, each item must contain a single unicode character in string form

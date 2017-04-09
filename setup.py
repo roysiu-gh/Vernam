@@ -21,7 +21,7 @@ setup(
     author = 'Roy Siu',
     author_email = '',
 
-    license = 'MIT',
+    license = 'MIT Licence',
 
     classifiers = [
         'Development Status :: 4 - Beta'
