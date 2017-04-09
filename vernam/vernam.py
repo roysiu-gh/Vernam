@@ -16,8 +16,8 @@ class vernam(object):
         return self.__dict__
     
     
-    #def vernam(self, key: Union[list, str]) -> list:
-    def vernam(self, key):
+    #def xor(self, key: Union[list, str]) -> list:
+    def xor(self, key):
         binkey = [ ord(x) for x in key ]
 
         for i in range(len(self.bintext)):
