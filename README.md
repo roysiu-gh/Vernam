@@ -1,33 +1,21 @@
 ---
-# Vernam 1.1.4
+# Vernam 2.0.0
 
 ### Synopsis
 A simple vernam (or OTP) encryption / decription program in python
 
 ---
 ### Code Example
-Create an object with plaintext "abcd6z":
+Encode message "super_secret_message" with key "very_secret_key", store in variable "encoded", and print as a list.
 ~~~
->>> foo = vernam("abcd6z
+encoded = vernam("super_secret_message", "very_secret_key")
+print( encoded )
 ~~~
----
-Encrypt with key "abczz", store in variable "encoded", and print:
+
+Decode message stored in variable "encoded" with key "very_secret_key", store in variable "decoded", and print as a string.
 ~~~
->>> encoded = (foo.xor("abczz"))
->>> print( encoded )
-[u'\x00', u'\x00', u'\x00', u'\x1e', u'L', u'\x1b']
-~~~
----
-Create object with ciphertext stored in "encoded":
-~~~
->>> bar = vernam(encoded)
-~~~
----
-Decrypt with key "abczz", store in variable "decoded", and print (with list joined):
-~~~
->>> decoded = bar.xor("abczz")
->>> print( "".join(decoded) )
-abcd6z
+decoded = vernam(encoded, "very_secret_key")
+print( "".join(decoded) )
 ~~~
 ---
 ### Installation
@@ -35,7 +23,6 @@ Install:
 ~~~
 >>> pip install vernam
 ~~~
----
 Import:
 ~~~
 >>> from vernam import vernam

@@ -1,0 +1,63 @@
+Metadata-Version: 1.1
+Name: vernam
+Version: 1.1.5
+Summary: Vernam cipher
+Home-page: https://github.com/roysoup/Vernam
+Author: Roy Siu
+Author-email: UNKNOWN
+License: MIT Licence
+Description: ---
+        # Vernam 1.1.5
+        
+        ### Synopsis
+        A simple vernam (or OTP) encryption / decription program in python
+        
+        ---
+        ### Code Example
+        Create an object with plaintext "abcd6z":
+        ~~~
+        >>> foo = vernam("abcd6z
+        ~~~
+        ---
+        Encrypt with key "abczz", store in variable "encoded", and print:
+        ~~~
+        >>> encoded = (foo.xor("abczz"))
+        >>> print( encoded )
+        [u'\x00', u'\x00', u'\x00', u'\x1e', u'L', u'\x1b']
+        ~~~
+        ---
+        Create object with ciphertext stored in "encoded":
+        ~~~
+        >>> bar = vernam(encoded)
+        ~~~
+        ---
+        Decrypt with key "abczz", store in variable "decoded", and print (with list joined):
+        ~~~
+        >>> decoded = bar.xor("abczz")
+        >>> print( "".join(decoded) )
+        abcd6z
+        ~~~
+        ---
+        ### Installation
+        Install:
+        ~~~
+        >>> pip install vernam
+        ~~~
+        ---
+        Import:
+        ~~~
+        >>> from vernam import vernam
+        ~~~
+        ---
+        ### API Reference
+        1. Create an instance of class vernam
+        2. Run: 
+        instance.xor(key)
+          * "key" must be a string or list, if the latter, each item must contain a single unicode character in string form
+        ---
+        ### License
+        [MIT Licence](https://choosealicense.com/licenses/mit/#)
+        
+        ---
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable

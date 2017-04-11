@@ -1,0 +1,9 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+vernam.egg-info/PKG-INFO
+vernam.egg-info/SOURCES.txt
+vernam.egg-info/dependency_links.txt
+vernam.egg-info/top_level.txt

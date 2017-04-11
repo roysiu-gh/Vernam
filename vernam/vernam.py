@@ -1,30 +1,20 @@
-#!/usr/bin/env python
-#from typing import Union
+#!/usr/bin/env python3
 
-class vernam(object):
-    def __init__(self, text):
-        self.text = text
-        self.bintext = [ ord(x) for x in text ]
+def vernam(text, key):
+    bintext = [ ord(x) for x in text ]
+    binkey = [ ord(x) for x in key ]
     
-    def __eq__(self, other):
-        return self.__dict__ == other.__dict__
+    for i in range(len(bintext)):
+        binkey.append( binkey[i] )
     
-    def __ne__(self, other):
-        return not self.__eq__(other)
+    result = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]
     
-    def __repr__(self):
-        return self.__dict__
-    
-    
-    #def xor(self, key: Union[list, str]) -> list:
-    def xor(self, key):
-        binkey = [ ord(x) for x in key ]
+    for index, item in enumerate(result):
+        result[index] = chr(item)
+    return result
 
-        for i in range(len(self.bintext)):
-            binkey.append( binkey[i] )
+encoded = vernam("super_secret_message", "very_secret_key")
+print( encoded )
 
-        result = [ x for x in [ self.bintext[i] ^ binkey[i] for i in range(len(self.bintext)) ] ]
-        
-        for index, item in enumerate(result):
-            result[index] = unichr(item)
-        return result
+decoded = vernam(encoded, "very_secret_key")
+print( "".join(decoded) )
