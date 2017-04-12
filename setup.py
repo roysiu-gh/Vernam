@@ -9,10 +9,10 @@ with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' )) as f:
 
 setup(
     name = 'vernam',
-    version = '2.4.0',
+    version = '2.4.1',
     scripts=['bin/vernam'],
     entry_points = {
-        'console_scripts': ['vernam=vernam.command_line:main']
+        'console_scripts': ['vernam=vernam.__main__:main']
     },
 
     description = 'Vernam cipher',
