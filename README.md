@@ -1,5 +1,5 @@
 ---
-# Vernam 2.2.0
+# Vernam 2.3.0
 
 ### Synopsis
 A simple vernam (or OTP) encryption / decription program in python
@@ -30,7 +30,7 @@ Import:
 ---
 ### CLI Usage
 ~~~
-vernam.py <message> <key>
+vernam <message> <key>
 ~~~
 ---
 ### License

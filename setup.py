@@ -1,6 +1,4 @@
 from setuptools import setup
-# To use a consistent encoding
-#from codecs import open
 from os import path
 
 here = path.abspath(path.dirname(__file__))
@@ -11,7 +9,8 @@ with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' )) as f:
 
 setup(
     name = 'vernam',
-    version = '2.2.0',
+    version = '2.3.0',
+    scripts=['bin/vernam'],
 
     description = 'Vernam cipher',
     long_description = long_description,

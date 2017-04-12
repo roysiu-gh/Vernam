@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+import vernam
+
+try:
+    print( vernam.vernam( sys.argv[1], sys.argv[2] ) )
+except (TypeError, IndexError):
+    vernam.usage()
