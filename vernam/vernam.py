@@ -6,8 +6,10 @@ def vernam(text:Union[list, str], key:Union[list, str]) -> list:
     bintext = [ ord(x) for x in text ]
     binkey = [ ord(x) for x in key ]
     
-    for i in range(len(bintext)):
+    i = 0
+    while len(binkey) < len(bintext):
         binkey.append( binkey[i] )
+        i += 1
     
     result = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]
     
