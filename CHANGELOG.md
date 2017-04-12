@@ -4,3 +4,6 @@
 
 ### 2.1.0
   * Added CLI
+
+### 2.4.0
+  * Updated CLI
