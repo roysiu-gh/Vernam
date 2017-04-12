@@ -1,5 +1,5 @@
 ---
-# Vernam 2.4.1
+# Vernam 2.4.2
 
 ### Synopsis
 A simple vernam (or OTP) encryption / decription program in python

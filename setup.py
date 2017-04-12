@@ -9,7 +9,7 @@ with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' )) as f:
 
 setup(
     name = 'vernam',
-    version = '2.4.1',
+    version = '2.4.2',
     scripts=['bin/vernam'],
     entry_points = {
         'console_scripts': ['vernam=vernam.__main__:main']
@@ -29,5 +29,5 @@ setup(
         'Development Status :: 5 - Production/Stable'
     ],
     
-    install_requires = [''],
+    install_requires = ['typing'],
 )
