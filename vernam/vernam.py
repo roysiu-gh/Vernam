@@ -2,7 +2,7 @@
 import sys
 from typing import Union, List
 
-def vernam(text, key):
+def vernam(text:Union[list, str], key:Union[list, str]) -> list:
     bintext = [ ord(x) for x in text ]
     binkey = [ ord(x) for x in key ]
     
