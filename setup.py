@@ -9,7 +9,7 @@ with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' )) as f:
 
 setup(
     name = 'vernam',
-    version = '2.4.4',
+    version = '2.4.5',
     packages = ["vernam"],
     #scripts=['bin/vernam'],
     scripts=['vernam/__main__.py'],

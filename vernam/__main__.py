@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import vernam
+from vernam import vernam
 import sys
 
 def main():
