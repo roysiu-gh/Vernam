@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from vernam import vernam
+from vernam import vernam, usage
 import sys
 
 def main():
     try:
-        print( vernam.vernam( sys.argv[1], sys.argv[2] ) )
+        print( vernam( sys.argv[1], sys.argv[2] ) )
     except (TypeError, IndexError):
-        vernam.usage()
+        usage()
 
 if __name__ =="__main__":
     main()
