@@ -1,0 +1,39 @@
+First, import
+ >>> from py_vernam import vernam
+
+
+Test normal encryption
+ >>> encrypted = vernam("abc", "123")
+ >>> print( encrypted )
+ ['P', 'P', 'P']
+
+Test decrypt
+ >>> print( vernam( encrypted, "123" ) )
+ ['a', 'b', 'c']
+
+Test no args
+ >>> vernam()
+ Traceback (most recent call last):
+   File "/usr/lib/python3.4/doctest.py", line 1318, in __run
+     compileflags, 1), test.globs)
+   File "<doctest py_vernam.doctest[4]>", line 1, in <module>
+     vernam()
+ TypeError: vernam() missing 2 required positional arguments: 'text' and 'key'
+
+Test one arg
+ >>> vernam(55)
+ Traceback (most recent call last):
+   File "/usr/lib/python3.4/doctest.py", line 1318, in __run
+     compileflags, 1), test.globs)
+   File "<doctest py_vernam.doctest[5]>", line 1, in <module>
+     vernam(55)
+ TypeError: vernam() missing 1 required positional argument: 'key'
+
+
+Test longer key
+ >>> print( vernam("abc", "123456789") )
+ ['P', 'P', 'P']
+
+Test longer text
+ >>> print( vernam("abcabc 456 defg zxy", "123") )
+ ['P', 'P', 'P', 'P', 'P', 'P', '\x11', '\x06', '\x06', '\x07', '\x12', 'W', 'T', 'T', 'T', '\x11', 'H', 'K', 'H']
