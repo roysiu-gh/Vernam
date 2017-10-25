@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import sys
-from typing import Union, List
 
-def vernam(text, key):
+def vernam(text, key, return_str=False, return_long=False):
     bintext = [ ord(x) for x in text ]
     binkey = [ ord(x) for x in key ]
     
@@ -11,17 +10,14 @@ def vernam(text, key):
         binkey.append( binkey[i] )
         i += 1
     
-    result = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]
+    vernamed = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]
+    result = [chr(i) for i in vernamed]
     
-    for index, item in enumerate(result):
-        result[index] = chr(item)
+    if return_str:
+        return "".join(result)
+    
     return result
 
-def usage():
-    print( "Usage: {} {} {}".format(sys.argv[0], "<message>", "<key>") )
-
 if __name__ == "__main__":
-    try:
-        print( vernam( sys.argv[1], sys.argv[2] ) )
-    except (TypeError, IndexError):
-        usage()
+    import doctest
+    doctest.testfile("py_vernam.doctest")

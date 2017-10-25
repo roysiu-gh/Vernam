@@ -3,3 +3,4 @@ include README.md
 include setup.cfg
 
 exclude makefile
+exclude MANIFEST.in
