@@ -24,10 +24,10 @@ def vernam(text, key, return_str=False, return_long=False):
 @click.argument("key")
 @click.option('--string/--list', '-s/-l', "return_str", default=False, help="return as string [default: list]")
 @click.option('--return-long', default=False, help="WIP")
-def vernam_cli(*args, **kwargs): #text, key, return_str, return_long
+def _vernam_cli(*args, **kwargs): #text, key, return_str, return_long
     click.echo( vernam(*args, **kwargs) )
 
 if __name__ == "__main__":
     #import doctest
     #doctest.testfile("vernam.doctest")
-    vernam_cli()
+    _vernam_cli()
