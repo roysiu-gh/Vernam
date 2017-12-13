@@ -3,24 +3,24 @@ import sys
 import click
 
 def vernam(text, key, return_str=False, alphanumerical=False):
-    if alphanumerical:
+    if alphanumerical:  # Set conversion aliases to custom functions using variable 'alphanumerics' rather than unicode points
         alphanumerics = [i for i in "0123456789abcdefghijklmbopqrstuvwxyzABCDEFGHIJKLMBOPQRSTUVWXYZ"]
         to_num = lambda x: alphanumerics.index(x)
         to_char = lambda x: alphanumerics[x]
-    else:
+    else:  # Set conversion aliases to builtins "ord" and "chr" using unicode points
         to_num = ord
         to_char = chr
     
-    bintext = [ to_num(x) for x in text ]
-    binkey = [ to_num(x) for x in key ]
+    bintext = [ to_num(x) for x in text ]  # Convet text to integers
+    binkey = [ to_num(x) for x in key ]  # Convet key to integers
     
     i = 0
-    while len(binkey) < len(bintext):
+    while len(binkey) < len(bintext):  # Resize key to length of text
         binkey.append( binkey[i] )
         i += 1
     
-    vernamed = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]
-    result = [to_char(i) for i in vernamed]
+    vernamed = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]  # XOR vernam operation
+    result = [to_char(i) for i in vernamed]  # Convert back to text
     
     if return_str:
         return "".join(result)
