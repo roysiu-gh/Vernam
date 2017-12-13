@@ -14,10 +14,8 @@ def vernam(text, key, return_str=False, alphanumerical=False):
     bintext = [ to_num(x) for x in text ]  # Convet text to integers
     binkey = [ to_num(x) for x in key ]  # Convet key to integers
     
-    i = 0
-    while len(binkey) < len(bintext):  # Resize key to length of text
+    for i in range( len(bintext) - len(binkey) ):  # Resize key to length of text
         binkey.append( binkey[i] )
-        i += 1
     
     vernamed = [ bintext[i] ^ binkey[i] for i in range(len(bintext)) ]  # XOR vernam operation
     result = [to_char(i) for i in vernamed]  # Convert back to text
