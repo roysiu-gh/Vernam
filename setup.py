@@ -30,5 +30,5 @@ setup(
         'Development Status :: 5 - Production/Stable'
     ],
     
-    install_requires = ['typing'],
+    install_requires = ['click'],
 )
