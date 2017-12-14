@@ -1,34 +1,34 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open( path.join(path.abspath(path.dirname(__file__)) , 'README.md' )) as f:
+with open( path.join(path.abspath(path.dirname(__file__)) , "README.md" )) as f:
     long_description = f.read()
 
 setup(
-    name = 'vernam',
-    version = '2.5.6',
-    packages = ["vernam"],
-    scripts=['vernam/__main__.py'],
+    name = "vernam",
+    version = "2.5.6",
+    
+    scripts=["vernam.py"],
     entry_points = {
-        'console_scripts': ['vernam = vernam.__main__:main']
+        "console_scripts": ["vernam = vernam:cli"]
     },
 
-    description = 'Vernam cipher',
+    description = "Vernam cipher",
     long_description = long_description,
 
-    url = 'https://github.com/roysoup/Vernam',
+    url = "https://github.com/roysoup/Vernam",
 
-    author = 'Roy Siu',
-    author_email = '',
+    author = "Roy Siu",
+    author_email = "",
 
-    license = 'MIT Licence',
+    license = "MIT Licence",
 
     classifiers = [
-        'Development Status :: 5 - Production/Stable'
+        "Development Status :: 5 - Production/Stable"
     ],
     
-    install_requires = ['click'],
+    install_requires = ["Click"],
 )

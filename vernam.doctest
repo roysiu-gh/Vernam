@@ -1,5 +1,5 @@
 First, import
- >>> from py_vernam import vernam
+ >>> from vernam import vernam
 
 
 Test normal encryption
