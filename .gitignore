@@ -1,5 +1,0 @@
-.gitignore
-__pycache__
-MANIFEST.in
-
-*.doctest
