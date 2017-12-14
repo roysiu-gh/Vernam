@@ -34,6 +34,4 @@ def cli(*args, **kwargs): #text, key, return_str, return_long
     click.echo( vernam(*args, **kwargs) )
 
 if __name__ == "__main__":
-    #import doctest
-    #doctest.testfile("vernam.doctest")
-    cli()
+    pass
